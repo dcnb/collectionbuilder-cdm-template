@@ -8,7 +8,7 @@ date is approximate,Approximated Date
 description,Description,DC.description
 source,Source
 subject,Subjects,DC.subject,true
-place,Location
+location,Location
 latitude,Latitude
 longitude,Longitude
 collection,Source Collection

@@ -42,9 +42,12 @@ subjects-off: true # true / false, turns off subject generation to lower dev bui
 subject-min: 6 # min size for subject cloud, too many terms = slow load time!
 stopwords: # need to figure out
 
-# timeline
+# Timeline
 year-navigation: #"1900;1905;1910;1915;1920" # set years to appear in dropdown nav
 year-nav-increment: 5 # set increments when auto gen nav years
+
+# About page
+about-off: false # true / false, if true will not show link to about page on front. Need to erase link in nav-configuration as well. 
 
 # Theme Options
 # navbar text color
