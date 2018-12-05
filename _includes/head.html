@@ -9,5 +9,7 @@
 {% else %}<link rel="stylesheet" href="{{ '/css/bootstrap.min.css' | prepend: site.digital-assets }}" type="text/css">{% endif %}
 {% if layout.gallery == true %}<link rel="stylesheet" href="{{ '/lightgallery/css/lightgallery.min.css' | prepend: site.digital-assets }}" type="text/css">{% endif %}
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}" type="text/css">
+{% if page.layout == "browse" %}<link rel="stylesheet" href="{{'/assets/css/fontawesome-all.min.css' | relative_url}}" >{% endif %}
+
 {% include google-analytics-php.html %}
 <!-- Last build date: {{ site.time | date: "%Y-%m-%d" }} -->
