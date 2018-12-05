@@ -6,4 +6,6 @@ permalink: /about.html
 featured-image: "objects/test001.jpg"
 ---
 ## About the Collection
+
+{{site.data.theme.description}}
 {% include credits.md %}

@@ -10,7 +10,7 @@ layout: page
         <div class="input-group input-group-lg">
             <input type="text" class="form-control form-control-lg" id="quicksearch" placeholder="Filter ... " > 
             <div class="input-group-append">
-                <button class="btn btn-success" type="button" title="Search" alt="Search" id="goButton" onclick="filterItems()">Search</button>
+                <button class="btn btn-pride-gold" type="button" title="Search" alt="Search" id="goButton" onclick="filterItems()">Search</button>
                 <a class="btn btn-outline-secondary filter" href="#" data-filter="">Reset</a>    
             </div>
         </div>
@@ -22,13 +22,16 @@ layout: page
     {% for item in items %}
     <div class="item col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2" >
         <div class="card">
-            {%- assign extension = item.format | strip | split: '/' | last | downcase -%}
+            {%- assign extension = item.format | downcase | strip | split: '/' | last -%}
+            {%- assign cdm-extension = item.contentdm-file-name | downcase | strip | split: '.' | last -%}
+         
             {%- if item.format contains 'image' -%}
             <a href="{% include item-link.html %}">
                 <img class="card-img-top lazy" {% if forloop.index < 20 %}src={% else %}data-original={%endif%}"{% include image/medium.html %}" alt="Image of {{ item.title | escape }}">           
             </a>
             {%- endif -%}
             <div class="card-body text-center search">
+                    {% if cdm-extension != extension %}<h1>WRONGFORMAT</h1>{%endif%}
                 <h3 class="card-title"><a href="{% include item-link.html %}" class="text-dark">{{ item.title }}</a></h3>
                 <p class="card-text">
                     {% if item.date %}<strong>Date:</strong> {{ item.date }}
