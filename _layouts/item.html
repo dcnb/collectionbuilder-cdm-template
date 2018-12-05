@@ -51,7 +51,9 @@ gallery: true
                         {% for t in topics %}
                             <a class="filter mr-3" data-filter="{{ t | strip | escape }}" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a> 
                         {% endfor %}
-                        {% elsif f.field == "date" %}
+                        {% elsif f.field contains "ccc" %}
+                        <a class="filter mr-3" href="{{ page[f.field] | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ page[f.field] }}</a>
+                         {% elsif f.field == "date" %}
                         {{ page[f.field] }} 
                         <a class="ml-4" href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}"><small>View Year on Timeline</small></a>
                         {% else %}{{ page[f.field] }}{% endif %}
@@ -122,6 +124,16 @@ gallery: true
     <div id="item-nav">
         {% if back %}<a class="previous bg-secondary text-white  btn btn-lg" href="{{ list[back] | relative_url }}" class="text-white">&laquo;</a>{% endif %}
         {% if forward %}<a class="next bg-secondary text-white btn btn-lg" href="{{ list[forward] | relative_url }}" class="text-white">&raquo;</a>{% endif %}
+    </div>
+    {%- elsif site.data.theme.browse-buttons == "numerical-order" -%}
+    <div class="text-center">
+        <a class="btn btn-secondary" href="{{ page.cdm-id | minus: 1 | prepend: site.data.theme.metadata | append: '.html'}}" role="button" id="prev-page-button">&laquo; Previous</a>
+        <a class="btn btn-secondary" href="{{ '/browse.html' | relative_url }}" role="button">| Back to browse |</a>
+        <a class="btn btn-secondary" href="{{ page.cdm-id | plus: 1 | prepend: site.data.theme.metadata | append: '.html'}}" role="button" id="next-page-button">Next &raquo;</a>
+    </div>
+    <div id="item-nav">
+        <a class="previous bg-secondary text-white  btn btn-lg" href="{{ page.cdm-id | minus: 1 | prepend: site.data.theme.metadata | append: '.html'}}" class="text-white">&laquo;</a>
+        <a class="next bg-secondary text-white btn btn-lg" href="{{ page.cdm-id | plus: 1 | prepend: site.data.theme.metadata | append: '.html'}}" class="text-white">&raquo;</a>
     </div>
 {%- endif -%}    
 </div>
