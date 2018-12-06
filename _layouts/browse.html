@@ -22,9 +22,7 @@ layout: page
     {% for item in items %}
     <div class="item col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2" >
         <div class="card">
-            {%- assign extension = item.format | downcase | strip | split: '/' | last -%}
-            {%- assign cdm-extension = item.contentdm-file-name | downcase | strip | split: '.' | last -%}
-         
+            {%- assign extension = item.format | strip | split: '/' | last | downcase -%}
             {%- if item.format contains 'image' -%}
             <a href="{% include item-link.html %}">
                 <img class="card-img-top lazy" {% if forloop.index < 20 %}src={% else %}data-original={%endif%}"{% include image/medium.html %}" alt="Image of {{ item.title | escape }}">           
@@ -34,8 +32,8 @@ layout: page
                     {% if cdm-extension != extension %}<h1>WRONGFORMAT</h1>{%endif%}
                 <h3 class="card-title"><a href="{% include item-link.html %}" class="text-dark">{{ item.title }}</a></h3>
                 <p class="card-text">
-                    {% if item.date %}<strong>Date:</strong> {{ item.date }}
-                    <br>{% endif %}<small>Type: <a data-filter="{{ extension | escape }}" href="{{ extension | prepend: '/browse.html#' | relative_url }}" title="{{ extension | escape }}" class="filter"></span>{{ extension | upcase }} <span class="far {% if item.format contains 'image' %}fa-image{% elsif item.format contains 'audio' %}fa-file-audio{% elsif item.format contains 'video' %}fa-file-video{%else%}fa-file{% endif %}"></a></small>
+                    {% if item.date %}<strong>Date:</strong> {{ item.date }}{% endif %}
+                    {% if site.data.theme.mediatypes contains ";" %}<br><small>Type: <a data-filter="{{ extension | escape }}" href="{{ extension | prepend: '/browse.html#' | relative_url }}" title="{{ extension | escape }}" class="filter"></span>{{ extension | upcase }} <span class="far {% if item.format contains 'image' %}fa-image{% elsif item.format contains 'audio' %}fa-file-audio{% elsif item.format contains 'video' %}fa-file-video{%else%}fa-file{% endif %}"></a></small>{%endif%}
                 </p>
                 <p class="card-text">{% if item.ccc-camp-number%}<strong>Camp #:</strong> <a class="btn btn-sm btn-secondary m-1 filter" data-filter="{{ item.ccc-camp-number | strip | escape }}" href="{{ item.ccc-camp-number | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ item.ccc-camp-number }}</a>{%endif%}{% if item.ccc-company-number%}<strong class="ml-2">Company #:</strong><a class="btn btn-sm btn-secondary m-1 filter" data-filter="{{ item.ccc-camp-number | strip | escape }}" href="{{ item.ccc-camp-number | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ item.ccc-company-number }}</a>{%endif%}</p>
                 {%- unless item.format contains 'image' -%}
@@ -45,8 +43,8 @@ layout: page
                 {%- endunless -%}
                 <p>
                     {%- capture btns -%}{% for f in fields %}{% if f.display-name-or-btn == 'btn' %}{{ item[f.field] | strip }};{% endif %}{% endfor %}{%- endcapture -%}
-                    {%- assign btns = btns | split: ';' -%}
-                    {% for b in btns %}{% if b !=" " %}
+                    {%- assign btns = btns | split: ';' | compact -%}
+                    {% for b in btns %}{% if b !=" " and b != "" %}
                     <a class="btn btn-sm btn-secondary m-1 filter" data-filter="{{ b | strip | escape }}" href="{{ b | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ b }}</a> 
                     {% endif %}{% endfor %}
                
