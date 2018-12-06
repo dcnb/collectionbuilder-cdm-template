@@ -29,7 +29,6 @@ layout: page
             </a>
             {%- endif -%}
             <div class="card-body text-center search">
-                    {% if cdm-extension != extension %}<h1>WRONGFORMAT</h1>{%endif%}
                 <h3 class="card-title"><a href="{% include item-link.html %}" class="text-dark">{{ item.title }}</a></h3>
                 <p class="card-text">
                     {% if item.date %}<strong>Date:</strong> {{ item.date }}{% endif %}
