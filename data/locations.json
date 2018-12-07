@@ -3,7 +3,7 @@
 ---
 {%- if site.data.theme.locations-on == true -%}
 {%- assign raw-subjects = site.data[site.data.theme.metadata] | map: "location" | join: ";" | split: ";" -%}
-{%- capture subjects -%}{% for s in raw-subjects %}{% if s != "" and s != " " %}{{ s | strip | downcase }};{% endif %}{%- endfor -%}{%- endcapture -%}
+{%- capture subjects -%}{% for s in raw-subjects %}{% if s != "" and s != " " %}{{ s | replace: "--",";" | strip | downcase }};{% endif %}{%- endfor -%}{%- endcapture -%}
 {%- assign subjects = subjects | split: ";" -%}
 {%- assign uniqueSubjects = subjects | uniq | sort -%}
 { "subjects": [

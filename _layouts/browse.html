@@ -1,5 +1,5 @@
 ---
-layout: page 
+layout: page-full-width
 ---
 {%- assign items = site.data[site.data.theme.metadata] -%}
 {%- assign fields = site.data.browse-config -%}
@@ -20,7 +20,7 @@ layout: page
 
 <div class="row" id="browse-items">
     {% for item in items %}
-    <div class="item col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2" >
+    <div class="item col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2" >
         <div class="card">
             {%- assign extension = item.format | strip | split: '/' | last | downcase -%}
             {%- if item.format contains 'image' -%}
@@ -55,7 +55,7 @@ layout: page
                     {% endif %}{% endfor %}
                 </p>
                 <p>
-                    <a href="{% include item-link.html %}" class="btn btn-info" title="link to {{ item.title | escape }}">View Item</a>
+                    <a href="{% include item-link.html %}" class="btn btn-clearwater" title="link to {{ item.title | escape }}">View Item</a>
                 </p>
             </div>
         </div>

@@ -38,11 +38,13 @@ latitude: 47.012456 #to determine center of map
 longitude: -116.265435 #to determine center of map
 zoom-level: 4 # zoom level for map 
 
+# Locations page
+locations-on: true # true/false
 
 # subject page
 subjects-off: true # true / false, turns off subject generation to lower dev build time (then page doesn't work!)
-subject-min: 6 # min size for subject cloud, too many terms = slow load time!
-stopwords: # need to figure out
+subject-min: 1 # min size for subject cloud, too many terms = slow load time!
+stopwords: united states # need to figure out
 
 # Timeline
 year-navigation: #"1900;1905;1910;1915;1920" # set years to appear in dropdown nav

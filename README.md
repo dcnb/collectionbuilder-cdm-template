@@ -1,5 +1,7 @@
 # Notes
 
+Locations metadata issues --> some are LCSH some are not. All over the place
+
 Needs about page!  Ivar and Pat will provide I assume
 
 Pages for each camp and company with own browse? 
@@ -16,7 +18,7 @@ Added "numerical-order" option to theme for easier build with next previous butt
 
 Should we adjust it so you can control how many cards appear on browse too???
 
-
+The 
 
 
 
