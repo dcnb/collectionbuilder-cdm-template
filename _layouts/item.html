@@ -69,9 +69,6 @@ gallery: true
                          {% elsif f.field == "date" %}
                         {{ page[f.field] }} 
                         <a class="ml-4" href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}"><small>View Year on Timeline</small></a>
-                        {% elsif f.field == "latitude" %}
-                        {{ page[f.field] }} 
-                        <a class="ml-4" href="{{ 'https://www.google.com/maps/search/?api=1&query=' | append: page[f.field]  | append: ',' | append: page.longitude }}"><small>View on Google Map</small></a>
                         {% else %}
                         {{ page[f.field] }}{% endif %}
                     </dd>

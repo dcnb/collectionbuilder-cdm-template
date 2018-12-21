@@ -1,9 +1,11 @@
 ---
 # find and count unique subjects
 ---
-{%- if site.data.theme.locations-on == true -%}
-{%- assign subjects = site.data[site.data.theme.metadata] | map: "location" | join: ";" | split: ";" | array_count_uniq | sort -%}
+{%- assign raw-subjects = site.data[site.data.theme.metadata] | map: "location" | join: ";" | split: ";" -%}
+{%- capture subjects -%}{% for s in raw-subjects %}{% if s != "" and s != " " %}{{ s | replace: "--",";" | strip | downcase }};{% endif %}{%- endfor -%}{%- endcapture -%}
+{%- assign subjects = subjects | split: ";" -%}
+{%- assign uniqueSubjects = subjects | uniq | sort -%}
 { "locations": [
-    {% for s in subjects %}{ "location" : {{ s[0] | jsonify }}, "count" : {{ s[1] | jsonify }}, "link" : {{ s[0] | url_param_escape | prepend: '/browse.html#' | absolute_url | jsonify }} }{% unless forloop.last %},
-    {% endunless %}{% endfor %}
+    {% for unique in uniqueSubjects %}{% assign count = subjects | where_exp: 'item', 'item == unique' | size %}{ "location" : {{ unique | jsonify }}, "count" : {{ count | jsonify }}, "link" : {{ unique | url_param_escape | prepend: '/browse.html#' | absolute_url | jsonify }} }{% unless forloop.last %},
+    {% endunless %}{% endfor %} 
 ]}

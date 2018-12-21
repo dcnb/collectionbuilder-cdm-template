@@ -30,9 +30,9 @@ featured-locations-max: 3
 mediatypes: images; documents; links; maps; #options[documents,images,video,sound,data] separate semi-colon(';'). If semi-colon is present, the browse items on the browse page will display a type field. If only one media type (and thus no semi-colon), no type field will display
 
 # item page 
-browse-buttons: numerical-order # true / false / numerical-order, adds previous/next arrows to items, but doubles build time; if items are in numerical order, can add 'numerical-order' for easier build time with same functionality
+browse-buttons: true # true / false / numerical-order, adds previous/next arrows to items, but doubles build time; if items are in numerical order, can add 'numerical-order' for easier build time with same functionality
 last-item-number: 1748 # only fill this in if the option above  for browse buttons is "numerical order"
-image-percentage-small: 35
+
 
 # map page
 latitude: 47.012456 #to determine center of map
@@ -41,7 +41,7 @@ zoom-level: 4 # zoom level for map
 
 # Locations page
 locations-on: true # true/false
-location-stopwords: #
+location-stopwords: united states; idaho # set of subjects separated by ;, e.g. boxers;boxing
 
 # subject page
 subjects-off: false # true / false, turns off subject generation to lower dev build time (then page doesn't work!)
