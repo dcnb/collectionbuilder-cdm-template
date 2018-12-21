@@ -6,10 +6,3 @@ layout: default
 <link rel="stylesheet" href="{{ '/leaflet/leaflet.fusesearch.css' | prepend: site.digital-assets }}">
 
 <div id="map"></div>
-<script>
-function centerLeafletMapOnMarker(map, marker) {
-    var latLngs = [ marker.getLatLng() ];
-    var markerBounds = L.latLngBounds(latLngs);
-    map.fitBounds(markerBounds);
-  }
-  </script>

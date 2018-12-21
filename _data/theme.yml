@@ -34,7 +34,6 @@ browse-buttons: numerical-order # true / false / numerical-order, adds previous/
 last-item-number: 1748 # only fill this in if the option above  for browse buttons is "numerical order"
 image-percentage-small: 35
 
-
 # map page
 latitude: 47.012456 #to determine center of map
 longitude: -116.265435 #to determine center of map
