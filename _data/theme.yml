@@ -30,7 +30,7 @@ featured-locations-max: 3
 mediatypes: images; documents; links; maps; #options[documents,images,video,sound,data] separate semi-colon(';'). If semi-colon is present, the browse items on the browse page will display a type field. If only one media type (and thus no semi-colon), no type field will display
 
 # item page 
-browse-buttons: true # true / false / numerical-order, adds previous/next arrows to items, but doubles build time; if items are in numerical order, can add 'numerical-order' for easier build time with same functionality
+browse-buttons: false # true / false / numerical-order, adds previous/next arrows to items, but doubles build time; if items are in numerical order, can add 'numerical-order' for easier build time with same functionality
 last-item-number: 1748 # only fill this in if the option above  for browse buttons is "numerical order"
 
 
@@ -47,9 +47,6 @@ location-stopwords: united states; idaho # set of subjects separated by ;, e.g. 
 subjects-off: false # true / false, turns off subject generation to lower dev build time (then page doesn't work!)
 subject-min: 6 # min size for subject cloud, too many terms = slow load time!
 stopwords: united states  # need to figure out
-
-# Locations page
-locations-on: # true/false
 
 # Timeline
 year-navigation: #"1900;1905;1910;1915;1920" # set years to appear in dropdown nav
