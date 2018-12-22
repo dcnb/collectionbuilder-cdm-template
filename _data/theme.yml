@@ -1,7 +1,7 @@
 # Jekyll Digital Collection Generator
 
 # Site settings
-title: Idaho Civilian Conservation Corps
+title: Civilian Conservation Corps (CCC) in Idaho Collection
 # choose metadata, be sure to also change page_gen data setting!
 metadata: cccidaho # check against cdm-collection-id below -- this should be used in config file as well
 
@@ -13,7 +13,7 @@ cdm-collection-id: cccidaho #
 
 # header and head metadata
 tagline: A collection of maps, images, and documents pertinent to the history of the CCC in Idaho
-description: "A collection of maps, images, and documents pertinent to the history of the CCC in Idaho representing the research discoveries of Patricia Hart and Ivar Nelson, who spent over two years traveling across the state to find and scan materials related to the CCC." 
+description: "A collection of maps, images, and documents pertinent to the history of the Civilian Conservation Corps (CCC) in Idaho representing the research discoveries of Patricia Hart and Ivar Nelson, who spent over two years traveling across the state to find and scan materials related to the CCC." 
 keywords: "Idaho; Fire; Forests; Wilderness" # describing the whole collection -- add to the two provided
 author: # You! Add your github username
 
@@ -30,7 +30,7 @@ featured-locations-max: 3
 mediatypes: images; documents; links; maps; #options[documents,images,video,sound,data] separate semi-colon(';'). If semi-colon is present, the browse items on the browse page will display a type field. If only one media type (and thus no semi-colon), no type field will display
 
 # item page 
-browse-buttons: false # true / false / numerical-order, adds previous/next arrows to items, but doubles build time; if items are in numerical order, can add 'numerical-order' for easier build time with same functionality
+browse-buttons: true # true / false / numerical-order, adds previous/next arrows to items, but doubles build time; if items are in numerical order, can add 'numerical-order' for easier build time with same functionality
 last-item-number: 1748 # only fill this in if the option above  for browse buttons is "numerical order"
 
 
@@ -41,7 +41,7 @@ zoom-level: 4 # zoom level for map
 
 # Locations page
 locations-on: true # true/false
-location-stopwords: united states; idaho # set of subjects separated by ;, e.g. boxers;boxing
+location-stopwords: United States;Idaho # set of subjects separated by ;, e.g. boxers;boxing
 
 # subject page
 subjects-off: false # true / false, turns off subject generation to lower dev build time (then page doesn't work!)
