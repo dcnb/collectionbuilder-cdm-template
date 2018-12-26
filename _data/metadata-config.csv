@@ -1,21 +1,21 @@
 field,display-name,dc-map,browse-link
 title,Title,DC.title
-ccc-camp-number,CCC Camp Number
-ccc-company-number,CCC Company Number
 creator,Creator,DC.creator
 date,Date Created,DCTERMS.created
 date is approximate,Approximated Date
 description,Description,DC.description
-source,Source
+item-information,Item Type
+related-publication,Related Publication
 subject,Subjects,DC.subject,true
 location,Location
 latitude,Latitude
 longitude,Longitude
+source,Source
 collection,Source Collection
 identifier,Source Identifier
 type,Type,DC.type
 format original,Format Original
 format,Format
-rightsstatement,Rights
+rights-standardized,Rights
 format-original,Original Format
 contributing-institution,Contributing Institution

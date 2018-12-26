@@ -10,13 +10,13 @@
       {{ count }}
       {% case t %}
       {% when 'image' %}
-      Images <span class="far fa-image"></span><br>
+      <a href="browse.html#jpg">Images <a class="far fa-image"></span></a><br>
       {% when 'audio' %}
-      Audio <span class="far fa-file-audio"></span><br>
+      <a href="browse.html#mp3">Audio <span class="far fa-file-audio"></span></a><br>
       {% when 'video' %}
       Videos <span class="far fa-file-video"></span><br>
       {% else %}
-      Documents <span class="far fa-file"></span><br>
+      <a href="browse.html#pdf">Documents <span class="far fa-file"></span></a><br>
       {%- endcase -%}
       {%- endif -%}
       {%- endfor -%}
