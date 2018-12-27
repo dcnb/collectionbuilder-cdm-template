@@ -4,18 +4,17 @@ creator,Creator,DC.creator
 date,Date Created,DCTERMS.created
 date is approximate,Approximated Date
 description,Description,DC.description
-item-information,Item Type
+item-information,Item Type,,true
 related-publication,Related Publication
 subject,Subjects,DC.subject,true
 location,Location
 latitude,Latitude
 longitude,Longitude
-source,Source
-collection,Source Collection
+original-identifier,Source
 identifier,Source Identifier
 type,Type,DC.type
 format original,Format Original
 format,Format
 rights-standardized,Rights
 format-original,Original Format
-contributing-institution,Contributing Institution
+source,Source Collection
