@@ -7,11 +7,18 @@ featured-image: "objects/test001.jpg"
 ---
 ## About the Collection
 
-The CCC in Idaho Digital Collection is an online portal of over 2,000 primary historical items documenting the activities of the Civilian Conservation Corps in Idaho, collected from across the state by Patricia Hart (Associate Professor, JAMM) and Ivar Nelson.
+_The below is adapted from the extensive [finding aid](http://archiveswest.orbiscascade.org/ark:/80444/xv97133/op=fstyle.aspx?t=k&q=psychiana) to the "Frank Bruce Robinson Papers, 1929-1951," which was first prepared in 1980 by Judith Nielsen._
 
-The Civilian Conservation Corps was the first, most far-reaching, longest-lived and best-loved of the New Deal programs in a decade full of big ideas and supersized projects. The CCC remains one of the few examples of how the United States has acted to mitigate the catastrophic effects of economic collapse while producing a legacy of public benefit. This collection reconsiders the CCC in fresh perspective and places Idaho-specifically the CCC in Idaho forests-at the very heart of contemporary issues regarding conservation, fire ecology and resource management.
+In August 1955, Alfred Robinson and Pearl Robinson gave the University of Idaho Library many Psychiana related items, including four large boxes which were to remain sealed for 25 years. These boxes were opened in January 1980 and the contents sorted; the material is now contained in seven file boxes. In 2014, these boxes were digitized and described by Eric Greenwell. In 2018, the metadata Greenwell produced was used to produce this digital collection. 
 
-Hart and Nelson have given 15 presentations on this project across the state of Idaho and have received over $13,000 to help develop and advance their research. 
+## Contents
+Included in the three boxes of correspondence are letters between Psychiana headquarters and students in eighteen countries. Carbon copies of Psychiana's replies are attached to most of the original letters from students. The letters from students which Robinson used in his publications are marked with quotation marks; occasionally words were changed or sentences rearranged. 
+
+The remaining boxes contain copies of all the Psychiana lessons, copies of Psychiana Weekly and other similar publications, typescripts of speeches and articles by Frank Robinson, broadsides used in advertising, newspaper clippings, magazine articles, a scrapbook of clippings kept by Robinson, and photographs.
+
+This is a very important collection not only for those researching Dr. Frank B. Robinson and the impact of Psychiana, but also for those interested in non-orthodox religion. Anyone interested in effective advertising methods would also find this collection useful.
+
+For more information on Psychiana and Frank B. Robinson, please see our finding aid: http://archiveswest.orbiscascade.org/ark:/80444/xv97133/op=fstyle.aspx?t=k&q=psychiana
 
 <hr >
 {% include credits.md %}
