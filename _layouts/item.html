@@ -44,11 +44,11 @@ gallery: true
                 </div>
                 {%- endif -%}
                 <div class="text-center my-2">
-                    <a href="{% include download/item.html %}" target="_blank" class="btn btn-outline-clearwater" title="object download">Download {{ page.format | split: '/' | last | upcase }}</a> 
-                    <hr>
-                    {%if page.date %}<a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}" target="_blank" class="ml-2 btn btn-sm btn-outline-clearwater" title="object download">View Year on Timeline</a>{%endif%}
-                    {%if page.latitude%}
-                    <a href="{{ 'https://www.google.com/maps/search/?api=1&query=' | append: page.latitude  | append: ',' | append: page.longitude }}" target="_blank" class="ml-2 btn btn-sm btn-outline-clearwater" title="object view on map">View Location on Map</a>{%endif%}
+                    <a target="_blank" href="{% include download/item.html %}" class="btn btn-outline-clearwater" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
+                    {% if page.date %}{%- capture year -%}{% if page.date contains "-" %}{{ page.date | split: "-" | first }}{% elsif page.date contains "/" %}{{ page.date | split: "/" | last }}{% else %}{{ page.date }}{% endif %}{%- endcapture -%}
+                    <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}" class="ml-2 btn btn-outline-clearwater" title="View object year on timeline">View on Timeline</a>{% endif %}
+                    {% if page.latitude and page.longitude %}
+                    <a href="{{ '/map.html#' | append: page.latitude  | append: ',' | append: page.longitude | relative_url}}" rel="noopener" class="ml-2 btn btn-outline-clearwater" title="View object location on Google map">View on Map</a>{% endif %}
                 </div>
             </div>
         </div>
@@ -64,13 +64,10 @@ gallery: true
                         {% for t in topics %}
                             <a class="filter mr-3" data-filter="{{ t | strip | escape }}" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a> 
                         {% endfor %}
-                        {% elsif f.field contains "ccc" %}
-                        <a class="filter mr-3" href="{{ page[f.field] | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ page[f.field] }}</a>
-                         {% elsif f.field == "date" %}
-                        {{ page[f.field] }} 
-                        <a class="ml-4" href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}"><small>View Year on Timeline</small></a>
+                        {% elsif f.field == "date" %}
+                        {{ page[f.field] }} <a class="ml-4 pl-4" href="{{  page.date | trim | slice: 0,4 | prepend: '/timeline.html#' | relative_url }}"><small>View Year on Timeline</small></a>
                         {% else %}
-                        {{ page[f.field] }}{% endif %}
+                        {{ page[f.field] | replace: '""','"' }}{% endif %}
                     </dd>
                     {% endif %}{% endfor %}
                 </dl>
@@ -87,7 +84,7 @@ gallery: true
                     {% assign facets = page.subject | split: ";" %}
                     <p>
                     {% for f in facets %}
-                        <a class="btn btn-sm btn-secondary m-1 filter" data-filter="{{ f | strip | escape }}" href="{{ f | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ f }}</a> 
+                        <a class="btn btn-sm btn-secondary m-1" href="{{ f | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ f }}</a> 
                     {% endfor %}
                     </p>
                 </div>
@@ -136,8 +133,10 @@ gallery: true
         {% if forward %}<a class="btn btn-secondary" href="{{ list[forward] | relative_url }}" role="button" id="next-page-button">Next &raquo;</a>{% endif %}
     </div>
     <div id="item-nav">
-        {% if back %}<a class="previous bg-secondary text-white  btn btn-lg" href="{{ list[back] | relative_url }}" class="text-white">&laquo;</a>{% endif %}
-        {% if forward %}<a class="next bg-secondary text-white btn btn-lg" href="{{ list[forward] | relative_url }}" class="text-white">&raquo;</a>{% endif %}
+        <div class="d-none d-md-block">
+        <a class="previous bg-secondary text-white  btn btn-lg" href="{{ back_url }}" class="text-white">&laquo;</a>
+        <a class="next bg-secondary text-white btn btn-lg" href="{{ forward_url }}" class="text-white">&raquo;</a>
+        </div>
     </div>
     {%- elsif site.data.theme.browse-buttons == "numerical-order" -%}
     <div class="text-center">
